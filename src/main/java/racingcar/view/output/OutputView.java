@@ -2,6 +2,7 @@ package racingcar.view.output;
 
 import racingcar.presentation.dto.response.CarStatusResponse;
 import racingcar.presentation.dto.response.RacingStatusResponse;
+import racingcar.presentation.dto.response.WinnerResponse;
 import racingcar.view.output.enums.OutputTemplate;
 
 import java.util.List;
@@ -24,7 +25,9 @@ public class OutputView {
         }
     }
 
-    public void printWinners(String winners) {
-        System.out.println(OutputTemplate.OUTPUT_WINNER_MESSAGE + winners);
+    // 최종 우승자를 출력하는 메서드 ex) "최종 우승자: car1, car2"
+    public void printWinners(WinnerResponse winnerResponse) {
+        System.out.print(OutputTemplate.OUTPUT_WINNER_MESSAGE);
+        System.out.println(String.join(", ", winnerResponse.winners()));
     }
 }
