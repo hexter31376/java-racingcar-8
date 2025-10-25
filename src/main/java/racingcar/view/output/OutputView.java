@@ -8,12 +8,12 @@ import java.util.List;
 
 public class OutputView {
 
-    void printResultTemplate() {
+    public void printResultTemplate() {
         System.out.println(OutputTemplate.OUTPUT_TITLE_MESSAGE);
     }
 
     // 현재 달리는 자동차들의 상태를 출력하는 메서드 ex) "car1 : ---"
-    void printRacingStatus(RacingStatusResponse racingStatusResponse) {
+    public void printRacingStatus(RacingStatusResponse racingStatusResponse) {
         List<CarStatusResponse> carStatuses = racingStatusResponse.carStatuses();
 
         for (CarStatusResponse carStatus : carStatuses) {
@@ -24,7 +24,7 @@ public class OutputView {
         }
     }
 
-    void printWinners(String winners) {
+    public void printWinners(String winners) {
         System.out.println(OutputTemplate.OUTPUT_WINNER_MESSAGE + winners);
     }
 }
