@@ -74,7 +74,7 @@ jun : -----
 
 ### Assembler:
 입력값과 출력값을 포장하고 해체하는 기능을 담당한다. presentation layer와 application layer 간의 서비스 분리를 의식한, 계층간의 Dto 변환을 위해 존재한다.
-- ViewAssembler: 도착한 Request를 DTO로 포장하는 기능 Application Layer에 종속
+- StartRaceAssembler: 도착한 Request를 DTO로 포장하는 기능 Application Layer에 종속
 - RacingResponseAssembler: 도착한 DTO를 Response로 포장하는 기능 Presentation Layer에 종속
 
 ### CarRacingUseCase:
