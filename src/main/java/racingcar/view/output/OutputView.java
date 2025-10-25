@@ -17,11 +17,10 @@ public class OutputView {
         List<CarStatusResponse> carStatuses = racingStatusResponse.carStatuses();
 
         for (CarStatusResponse carStatus : carStatuses) {
-            StringBuilder statusBuilder = new StringBuilder();
-            statusBuilder.append(carStatus.carName())
-                    .append(" : ")
-                    .append("-".repeat(carStatus.position()));
-            System.out.println(statusBuilder);
+            String carStatusOutput = carStatus.carName() +
+                    " : " +
+                    "-".repeat(carStatus.position());
+            System.out.println(carStatusOutput);
         }
     }
 
