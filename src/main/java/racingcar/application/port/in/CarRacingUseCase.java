@@ -3,8 +3,6 @@ package racingcar.application.port.in;
 import racingcar.application.dto.response.RacingStatusDto;
 import racingcar.application.dto.response.WinnerDto;
 import racingcar.presentation.dto.request.StartRaceRequest;
-import racingcar.presentation.dto.response.RacingStatusResponse;
-import racingcar.presentation.dto.response.WinnerResponse;
 
 public interface CarRacingUseCase {
     // 레이싱 스타트 요청 메서드
