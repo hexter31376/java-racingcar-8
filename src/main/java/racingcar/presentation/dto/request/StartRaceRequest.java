@@ -1,6 +1,6 @@
 package racingcar.presentation.dto.request;
 
-public record ViewRequest(
+public record StartRaceRequest(
     String carNames,
     int tryCount
 ) {

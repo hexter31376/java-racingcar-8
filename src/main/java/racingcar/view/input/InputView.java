@@ -1,12 +1,12 @@
 package racingcar.view.input;
 
 import camp.nextstep.edu.missionutils.Console;
-import racingcar.application.dto.input.ViewRequest;
+import racingcar.presentation.dto.request.StartRaceRequest;
 import racingcar.view.input.enums.InputTemplate;
 
 public class InputView {
 
-    public ViewRequest readline() {
+    public StartRaceRequest readline() {
 
         System.out.println(InputTemplate.INPUT_CAR_NAMES_MESSAGE.getMessage());
         String carList = Console.readLine();
@@ -14,6 +14,6 @@ public class InputView {
         System.out.println(InputTemplate.INPUT_TRY_COUNT_MESSAGE.getMessage());
         String tryCount = Console.readLine();
 
-        return new ViewRequest(carList, Integer.parseInt(tryCount));
+        return new StartRaceRequest(carList, Integer.parseInt(tryCount));
     }
 }
