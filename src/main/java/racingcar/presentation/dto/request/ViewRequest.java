@@ -1,4 +1,4 @@
-package racingcar.application.dto.input;
+package racingcar.presentation.dto.request;
 
 public record ViewRequest(
     String carNames,

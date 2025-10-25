@@ -1,4 +1,4 @@
-package racingcar.application.dto.output;
+package racingcar.presentation.dto.response;
 
 import java.util.List;
 
