@@ -53,7 +53,7 @@ public class CarRacingService{
     // 게임이 진행중인지 조회하여 boolean값 반환
     public boolean hasNextRound() {
         GameSnap gameSnap = gameRepository.getGameSnap();
-        return gameSnap.gameState().isOver();
+        return !gameSnap.gameState().isOver();
     }
 
     // read and write 로직

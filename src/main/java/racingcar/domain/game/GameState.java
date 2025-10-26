@@ -23,7 +23,7 @@ public final class GameState {
     }
 
     public boolean isOver() {
-        return round >= totalRounds; // 안전하게 >=
+        return round >= totalRounds;
     }
 
     public void advance() {
