@@ -8,9 +8,9 @@ public class GameState {
         this.TotalGameCount = TotalGameCount;
     }
 
-    public static Integer validatedFrom(Integer TotalGameCount) {
+    public static GameState validatedFrom(Integer TotalGameCount) {
         validate(TotalGameCount);
-        return TotalGameCount;
+        return new GameState(TotalGameCount);
     }
 
     public static void validate(Integer totalGameCount) {
