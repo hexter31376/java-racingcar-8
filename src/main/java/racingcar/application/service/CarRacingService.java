@@ -10,10 +10,7 @@ import racingcar.domain.car.Car;
 import racingcar.domain.car.Cars;
 import racingcar.domain.game.GameState;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class CarRacingService{
 
@@ -36,8 +33,8 @@ public class CarRacingService{
         String carNamesInput = startRaceRequest.carNames();
         List<String> carNames = inputParser.parseInput(carNamesInput);
 
-        // 2. carNames List를 HashMap으로 변경 및 삽입
-        Map<String, Car> carMap = new HashMap<>();
+        // 2. carNames List를 LinkedHashMap으로 변경 및 삽입
+        Map<String, Car> carMap = new LinkedHashMap<>();
         for (String carName : carNames) {
             Car car = Car.validatedFrom(carName);
             carMap.put(carName, car);
