@@ -1,6 +1,6 @@
-package racingcar.application.infrastructure.config;
+package racingcar.infrastructure.config;
 
-import racingcar.application.infrastructure.repository.GameRepository;
+import racingcar.infrastructure.repository.GameRepository;
 import racingcar.application.service.CarRacingService;
 import racingcar.application.service.InputParser;
 import racingcar.application.service.RandomGenerator;

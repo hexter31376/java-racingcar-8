@@ -1,13 +1,11 @@
 # java-racingcar-precourse
 
 ## 서비스 흐름
-1. 메인 서비스가 인풋 뷰 실행
-2. 인풋 뷰가 전달한 데이터를 메인 서비스가 파서에 전달 
-3. 파서가 각 데이터파싱 및 파싱한 항목에 대해 car 엔티티를 생성하여 리스트로 만들고 횟수도 포함하여 dto 생성 후 메인 서비스에 반환
-4. 메인 서비스가 다시 racingService를 호출
-5. racingService가 dto를 받아 레이싱 로직 수행 후 raceStateResponse 리스트를 메인 서비스에 반환
-6. 파서가 리스폰스를 해체하여 리스트로 outputView에 전달
-7. outputView가 리스폰스를 출력
+1. 어플리케이션이 AppConfig를 불러오고 불러온 AppConfig에서 컨트롤러를 얻어 호출하여 어플리케이션이 시작된다.
+2. 컨트롤러는 뷰와 서비스를 조작하고 입력 뷰에서 데이터를 받아 서비스에게 전달하고 3개의 흐름으로 나뉘어진 서비스 로직을 호출한다.
+3. 서비스 로직은 레파지토리 계층을 통해 상태를 기억하며 그 자체로는 무상태성이다.
+4. start를 통해 각 도메인을 조작하여 처음 세팅을 마친 후 레파지토리에 정보를 저장한다.
+5. 
 
 ## 기능 정의
 ### inputView:  
@@ -30,25 +28,23 @@
 pobi : -
 woni : 
 jun : -
-# output[1][1-end]
+
 pobi : --
 woni : -
 jun : --
 
-
-# output[2][1-end]
 pobi : ---
 woni : --
 jun : ---
-# output[3][1-end]
+
 pobi : ----
 woni : ---
 jun : ----
-# output[4][1-end]
+
 pobi : -----
 woni : ----
 jun : -----
-# output[5][1-end]
+
 
 최종 우승자 : pobi, jun
 ```

@@ -1,4 +1,4 @@
-package racingcar.application.infrastructure.repository;
+package racingcar.infrastructure.repository;
 
 import racingcar.domain.car.Cars;
 import racingcar.domain.game.GameState;
