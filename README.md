@@ -72,11 +72,6 @@ jun : -----
 - CarRacingUseCase로부터 받은 raceStateResponse를 받아 다시 OutputView에 전달하여 출력
 - 최종 우승자를 CarRacingUseCase로부터 받은 결과로 Assembler를 통해 리패킹하고 OutputView에 전달하여 출력
 
-### Assembler:
-입력값과 출력값을 포장하고 해체하는 기능을 담당한다. presentation layer와 application layer 간의 서비스 분리를 의식한, 계층간의 Dto 변환을 위해 존재한다.
-- StartRaceAssembler: 도착한 Request를 DTO로 포장하는 기능 Application Layer에 종속
-- RacingResponseAssembler: 도착한 DTO를 Response로 포장하는 기능 Presentation Layer에 종속
-
 ### CarRacingUseCase:
 레이싱 게임의 유스케이스를 담당하는 객체로서 다음과 같은 기능을 담당한다.
 - 도착한 dto를 기반으로 레이싱 게임을 수행할 준비를 진행할 수 있게 도메인 객체들을 생성 및 초기화
