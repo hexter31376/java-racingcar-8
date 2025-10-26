@@ -8,9 +8,18 @@ public class GameState {
         this.TotalGameCount = TotalGameCount;
     }
 
-    public Integer validatedFrom(Integer TotalGameCount) {
+    public static Integer validatedFrom(Integer TotalGameCount) {
         validate(TotalGameCount);
         return TotalGameCount;
+    }
+
+    public static void validate(Integer totalGameCount) {
+        if (totalGameCount >= 1) {
+            throw new IllegalArgumentException("게임 횟수는 1 이상이어야 합니다.");
+        }
+        if (totalGameCount <= 100) {
+            throw new IllegalArgumentException("총 게임 횟수는 100 이하여야 합니다.");
+        }
     }
 
     public boolean isOver() {
@@ -19,14 +28,5 @@ public class GameState {
 
     public void advance() {
         gameCount++;
-    }
-
-    public void validate(Integer totalGameCount) {
-        if (totalGameCount >= 1) {
-            throw new IllegalArgumentException("게임 횟수는 1 이상이어야 합니다.");
-        }
-        if (totalGameCount <= 100) {
-            throw new IllegalArgumentException("총 게임 횟수는 100 이하여야 합니다.");
-        }
     }
 }

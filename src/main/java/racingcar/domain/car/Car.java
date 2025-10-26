@@ -10,10 +10,20 @@ public class Car {
         this.position = 0;
     }
 
-    public Car validatedFrom(String name) {
+    public static Car validatedFrom(String name) {
         validate(name);
         return new Car(name);
     }
+
+    public static void validate(String name) {
+        if (name == null || name.isBlank()) {
+            throw new IllegalArgumentException("자동차 이름은 비어 있을 수 없습니다. : " + name);
+        }
+        if (name.length() > 10) {
+            throw new IllegalArgumentException("자동차 이름은 10자 이하만 가능합니다. : " + name);
+        }
+    }
+
     public String getName() {
         return name;
     }
@@ -24,14 +34,5 @@ public class Car {
 
     public void move() {
         this.position++;
-    }
-
-    public void validate(String name) {
-        if (name == null || name.isBlank()) {
-            throw new IllegalArgumentException("자동차 이름은 비어 있을 수 없습니다. : " + name);
-        }
-        if (name.length() > 10) {
-            throw new IllegalArgumentException("자동차 이름은 10자 이하만 가능합니다. : " + name);
-        }
     }
 }
