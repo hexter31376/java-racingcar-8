@@ -25,6 +25,9 @@ public class CarRacingController {
         StartRaceRequest startRaceRequest = inputView.readline();
         carRacing.start(startRaceRequest);
 
+        // 결과 출력 시작 메시지
+        outputView.printResultTemplate();
+
         // 2. 라운드별 경기 결과 출력
         while (carRacing.hasNextRound()) {
             RacingStatusResponse racingStatus = carRacing.getRoundResult();
