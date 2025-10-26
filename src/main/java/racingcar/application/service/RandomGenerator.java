@@ -11,9 +11,6 @@ public class RandomGenerator {
     }
 
     public boolean isSuccess() {
-        if (generateRandomNumber() >= 4) {
-            return true;
-        }
-        return false;
+        return generateRandomNumber() >= 4;
     }
 }
