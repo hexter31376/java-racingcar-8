@@ -25,6 +25,6 @@ public class InputView {
             throw new IllegalArgumentException("시도 횟수는 숫자여야 합니다: " + tryCountInput);
         }
 
-        return new StartRaceRequest(carList, Integer.parseInt(tryCount));
+        return new StartRaceRequest(carList, tryCount);
     }
 }
