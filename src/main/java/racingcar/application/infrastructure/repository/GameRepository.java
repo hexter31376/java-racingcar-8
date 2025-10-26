@@ -8,7 +8,7 @@ public class GameRepository {
     private GameSnap gameSnap;
 
     public void save (Cars cars, GameState gameState) {
-        GameSnap gameSnap = new GameSnap(cars, gameState);
+        gameSnap = new GameSnap(cars, gameState);
     }
 
     public GameSnap getGameSnap() {
