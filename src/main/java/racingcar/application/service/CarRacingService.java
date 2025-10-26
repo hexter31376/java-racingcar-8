@@ -81,8 +81,7 @@ public class CarRacingService{
         List<CarStatusResponse> carStatuses = cars.getValues().values()
                 .stream()
                 .map(car -> {
-                    CarStatusResponse carStatus = new CarStatusResponse(car.getName(), car.getPosition());
-                    return carStatus;
+                    return new CarStatusResponse(car.getName(), car.getPosition());
                 }).toList();
 
         // 레이싱 상태 반환
