@@ -1,6 +1,5 @@
-package racingcar.domain.random;
+package racingcar.application.service;
 
-import camp.nextstep.edu.missionutils.DateTimes;
 import camp.nextstep.edu.missionutils.Randoms;
 
 public class RandomGenerator {
