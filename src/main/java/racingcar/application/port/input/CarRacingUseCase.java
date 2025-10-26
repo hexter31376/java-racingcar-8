@@ -1,4 +1,4 @@
-package racingcar.application.port.in;
+package racingcar.application.port.input;
 
 import racingcar.application.dto.response.RacingStatusDto;
 import racingcar.application.dto.response.WinnerDto;
