@@ -16,14 +16,15 @@ public class InputParser {
                 .map(carName -> {
                     validateCarNameAllExist(carName); // 콤마를 기준으로 차 이름이 전부 존재하는지
                     validateCarNameDuplicated(carName, seen); // 차 이름 중복 체크
+                    seen.add(carName);
                     return carName;
                 })
                 .toList();
     }
 
     private void validateCarNameAllExist(String carName) {
-        if (carName.isBlank()) {
-            throw new IllegalArgumentException("올바르지 않은 입력입니다, 차 항목이 비어있습니다.");
+        if (carName == null || carName.isBlank()) {
+            throw new IllegalArgumentException("올바르지 않은 입력입니다, 차 항목이 비어있습니다." + carName);
         }
     }
 
@@ -35,7 +36,7 @@ public class InputParser {
 
     private void validateInput(String input) {
         if (input.isBlank()) {
-            throw new IllegalArgumentException("입력값이 비어있습니다." + input);
+            throw new IllegalArgumentException("입력값이 비어있습니다.");
         }
     }
 }
