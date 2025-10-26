@@ -1,6 +1,5 @@
 package racingcar.domain.car;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class Cars {
