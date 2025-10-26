@@ -12,7 +12,18 @@ public class InputView {
         String carList = Console.readLine();
 
         System.out.println(InputTemplate.INPUT_TRY_COUNT_MESSAGE.getMessage());
-        String tryCount = Console.readLine();
+        String tryCountInput = Console.readLine();
+
+        if (tryCountInput == null || tryCountInput.isBlank()) {
+            throw new IllegalArgumentException("시도할 횟수를 입력해야 합니다.");
+        }
+
+        int tryCount;
+        try {
+            tryCount = Integer.parseInt(tryCountInput);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("시도 횟수는 숫자여야 합니다: " + tryCountInput);
+        }
 
         return new StartRaceRequest(carList, Integer.parseInt(tryCount));
     }
