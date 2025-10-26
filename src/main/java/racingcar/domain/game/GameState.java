@@ -1,16 +1,16 @@
 package racingcar.domain.game;
 
 public class GameState {
-    private final Integer TotalGameCount;
+    private final Integer totalGameCount;
     private int gameCount = 0;
 
     private GameState(Integer TotalGameCount) {
-        this.TotalGameCount = TotalGameCount;
+        this.totalGameCount = TotalGameCount;
     }
 
-    public static GameState validatedFrom(Integer TotalGameCount) {
-        validate(TotalGameCount);
-        return new GameState(TotalGameCount);
+    public static GameState validatedFrom(Integer totalGameCount) {
+        validate(totalGameCount);
+        return new GameState(totalGameCount);
     }
 
     public static void validate(Integer totalGameCount) {
@@ -23,7 +23,7 @@ public class GameState {
     }
 
     public boolean isOver() {
-        return gameCount == TotalGameCount;
+        return gameCount == totalGameCount;
     }
 
     public void advance() {
