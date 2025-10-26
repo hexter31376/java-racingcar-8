@@ -1,7 +1,7 @@
 package racingcar.view.input;
 
 import camp.nextstep.edu.missionutils.Console;
-import racingcar.presentation.dto.request.StartRaceRequest;
+import racingcar.application.dto.request.StartRaceRequest;
 import racingcar.view.input.enums.InputTemplate;
 
 public class InputView {

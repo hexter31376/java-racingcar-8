@@ -1,27 +1,23 @@
 package racingcar.presentation;
 
-import racingcar.application.port.in.CarRacingUseCase;
-import racingcar.presentation.assembler.RacingResponseAssembler;
-import racingcar.presentation.dto.request.StartRaceRequest;
-import racingcar.presentation.dto.response.RacingStatusResponse;
-import racingcar.presentation.dto.response.WinnerResponse;
+import racingcar.application.service.CarRacingService;
+import racingcar.application.dto.request.StartRaceRequest;
+import racingcar.application.dto.response.RacingStatusResponse;
+import racingcar.application.dto.response.WinnerResponse;
 import racingcar.view.input.InputView;
 import racingcar.view.output.OutputView;
 
 public class CarRacingController {
     private final InputView inputView;
     private final OutputView outputView;
-    private final CarRacingUseCase carRacing;
-    private final RacingResponseAssembler assembler;
+    private final CarRacingService carRacing;
 
     public CarRacingController(InputView inputView,
                                OutputView outputView,
-                               CarRacingUseCase carRacing,
-                               RacingResponseAssembler assembler) {
+                               CarRacingService carRacing) {
         this.inputView = inputView;
         this.outputView = outputView;
         this.carRacing = carRacing;
-        this.assembler= assembler;
     }
 
     public void run() {
@@ -31,12 +27,12 @@ public class CarRacingController {
 
         // 2. 라운드별 경기 결과 출력
         while (carRacing.hasNextRound()) {
-            RacingStatusResponse racingStatus = assembler.assembleRacingStatus(carRacing.getRoundResult());
+            RacingStatusResponse racingStatus = carRacing.getRoundResult();
             outputView.printRacingStatus(racingStatus);
         }
 
         // 3. 최종 우승자 발표
-        WinnerResponse winners = assembler.assembleWinners(carRacing.getFinalWinners());
+        WinnerResponse winners = carRacing.getFinalWinners();
         outputView.printWinners(winners);
     }
 }

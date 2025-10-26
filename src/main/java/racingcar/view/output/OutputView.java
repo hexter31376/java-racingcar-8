@@ -1,8 +1,8 @@
 package racingcar.view.output;
 
-import racingcar.presentation.dto.response.CarStatusResponse;
-import racingcar.presentation.dto.response.RacingStatusResponse;
-import racingcar.presentation.dto.response.WinnerResponse;
+import racingcar.application.dto.response.CarStatusResponse;
+import racingcar.application.dto.response.RacingStatusResponse;
+import racingcar.application.dto.response.WinnerResponse;
 import racingcar.view.output.enums.OutputTemplate;
 
 import java.util.List;
