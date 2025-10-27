@@ -8,7 +8,7 @@ public final class GameState {
         this.totalRounds = totalRounds;
     }
 
-    public static GameState validatedFrom(int totalRounds) {
+    public static GameState from(int totalRounds) {
         validate(totalRounds);
         return new GameState(totalRounds);
     }

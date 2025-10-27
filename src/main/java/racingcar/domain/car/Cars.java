@@ -9,7 +9,7 @@ public class Cars {
         this.cars = cars;
     }
 
-    public static Cars validatedOf(Map<String, Car> cars) {
+    public static Cars of(Map<String, Car> cars) {
         validate(cars);
         return new Cars(cars);
     }

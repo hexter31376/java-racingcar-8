@@ -31,19 +31,19 @@ public class CarRacingService{
     public void start(StartRaceRequest startRaceRequest) {
         // 1. carName 추출
         String carNamesInput = startRaceRequest.carNames();
-        List<String> carNames = inputParser.parseInput(carNamesInput);
+        List<String> carNames = inputParser.parse(carNamesInput);
 
         // 2. carNames List를 LinkedHashMap으로 변경 및 삽입
         Map<String, Car> carMap = new LinkedHashMap<>();
         for (String carName : carNames) {
-            Car car = Car.validatedFrom(carName);
+            Car car = Car.from(carName);
             carMap.put(carName, car);
         }
-        Cars cars = Cars.validatedOf(carMap);
+        Cars cars = Cars.of(carMap);
 
         // 3. tryCount 추출 및 게임 생성
         Integer tryCount = startRaceRequest.tryCount();
-        GameState gameState= GameState.validatedFrom(tryCount);
+        GameState gameState= GameState.from(tryCount);
 
         // 5. 상태 저장
         gameRepository.save(cars, gameState);

@@ -10,7 +10,7 @@ public class Car {
         this.position = 0;
     }
 
-    public static Car validatedFrom(String name) {
+    public static Car from(String name) {
         validate(name);
         return new Car(name);
     }

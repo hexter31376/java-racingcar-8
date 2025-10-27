@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class InputParser {
 
-    public List<String> parseInput(String input) {
+    public List<String> parse(String input) {
         // 1. null 및 빈 문자열 체크
         validateInput(input);
         // 2. ,앞뒤의 공백을 무시하고 삽입함과 동시에 중복 여부 검사
