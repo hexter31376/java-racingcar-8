@@ -1,6 +1,6 @@
-// 파일: src/test/java/racingcar/view/input/InputViewTest.java
 package racingcar.view.input;
 
+import camp.nextstep.edu.missionutils.Console;
 import org.junit.jupiter.api.*;
 import racingcar.application.dto.request.StartRaceRequest;
 
@@ -24,6 +24,7 @@ class InputViewTest {
     void cleanUpStreams() {
         System.setIn(originalIn);
         System.setOut(originalOut);
+        Console.close();
     }
 
     @Test
